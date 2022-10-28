@@ -210,3 +210,15 @@ html {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.grid {
+  position: absolute;
+  width: 600px;
+  height: 300px;
+  border: 1px solid black;
+}
+.block {
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  background-color: blue;
+}
