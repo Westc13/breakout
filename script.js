@@ -2,6 +2,8 @@ const grid = document.querySelector(".grid");
 const blockWidth = 100;
 const blockHeight = 20;
 const boardWidth = 560;
+const ballDiameter = 20;
+let timerId;
 
 const userStart = [230, 10];
 let currentPosition = userStart;
@@ -99,9 +101,19 @@ grid.appendChild(ball);
 
 // move the ball
 function moveBall() {
-  ballCurrentPosition[0] += 2;
-  ballCurrentPosition[1] += 2;
+  ballCurrentPosition[0] += xDirection;
+  ballCurrentPosition[1] += yDirection;
   drawBall();
 }
 
-setInterval(moveBall, 30);
+timerId = setInterval(moveBall, 30);
+
+// check for collisions
+function checkForCollisions() {
+  // check for wall collisions
+  if (ballCurrentPosition[0] >= boardWidth - ballDiameter) {
+    changeDirection();
+  }
+}
+
+function changeDirection() {}
