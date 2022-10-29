@@ -1,4 +1,5 @@
 const grid = document.querySelector(".grid");
+const scoreDisplay = document.getElementById("score");
 const blockWidth = 100;
 const blockHeight = 20;
 const boardWidth = 560;
@@ -126,6 +127,7 @@ function checkForCollisions() {
   // check for game over
   if (ballCurrentPosition[1] <= 0) {
     clearInterval(timerId);
+    scoreDisplay.innerHTML = "You Lose";
   }
 }
 
