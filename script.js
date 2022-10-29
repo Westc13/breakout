@@ -8,6 +8,7 @@ const ballDiameter = 20;
 let timerId;
 let xDirection = -2;
 let yDirection = 2;
+let score = 0;
 
 const userStart = [230, 10];
 let currentPosition = userStart;
@@ -126,6 +127,9 @@ function checkForCollisions() {
       const allBlocks = Array.from(document.querySelectorAll(".block"));
       allBlocks[i].classList.remove("block");
       blocks.splice(i, 1);
+      changeDirection();
+      score++;
+      scoreDisplay.innerHTML = score;
     }
   }
 
